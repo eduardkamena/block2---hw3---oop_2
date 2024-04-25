@@ -1,33 +1,27 @@
-import Service.ServiceStation;
-import Service.Bicycle;
-import Service.Car;
-import Service.Truck;
+import Service.*;
 
 public class Main {
     public static void main(String[] args) {
 
         // Инициализация объектов "Машина"
-        Car car = new Car("car1", 4);
-        Car car2 = new Car("car2", 4);
+        CarService car = new CarService("car1", 4);
+        CarService car2 = new CarService("car2", 4);
 
         // Инициализация объектов "Грузовик"
-        Truck truck = new Truck("truck1", 6);
-        Truck truck2 = new Truck("truck2", 8);
+        TruckService truck = new TruckService("truck1", 6);
+        TruckService truck2 = new TruckService("truck2", 8);
 
         // Инициализация объектов "Велосипед"
-        Bicycle bicycle = new Bicycle("bicycle1", 2);
-        Bicycle bicycle2 = new Bicycle("bicycle2", 2);
+        BicycleService bicycle = new BicycleService("bicycle1", 2);
+        BicycleService bicycle2 = new BicycleService("bicycle2", 2);
 
-        // Создание экземпляра класса
-        ServiceStation station = new ServiceStation();
-
-        // Вызов методов из класса Обслуживания созданных объектов
-        station.check(car);
-        station.check(car2);
-        station.check(bicycle);
-        station.check(bicycle2);
-        station.check(truck);
-        station.check(truck2);
+        // Вызов методов для
+        car.check(car);
+        car2.check(car2);
+        bicycle.check(bicycle);
+        bicycle2.check(bicycle2);
+        truck.check(truck);
+        truck2.check(truck2);
     }
 
 }

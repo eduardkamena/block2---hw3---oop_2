@@ -1,30 +1,25 @@
 package Service;
 
-abstract class VehicleType { // Абстрактный класс Транспортного средства
-    protected String modelName; // Категория транспортного средства
-    protected int wheelsCount; // Количество колес
+public abstract class VehicleType { // Абстрактный класс Транспортного средства
+    private final String modelName; // Категория транспортного средства
+    private final int wheelsCount; // Количество колес
 
     // Конструктор Транспортного средства
-    protected VehicleType(String modelName, int wheelsCount) {
+    VehicleType(String modelName, int wheelsCount) {
         this.modelName = modelName;
         this.wheelsCount = wheelsCount;
     }
 
-    // Метод для смены покрышки
-    void checkTyres() {
-        for (int i = 0; i < wheelsCount; i++) {
-            System.out.println("Меняем покрышку");
-        }
+    // Геттеры
+    public String getModelName() {
+        return modelName;
     }
 
-    // Метод для проверки двигателя
-    void checkEngine() {
-        System.out.println("Проверяем двигатель");
+    public int getWheelsCount() {
+        return wheelsCount;
     }
 
-    // Метод для проверки прицепа
-    void checkTrailer() {
-        System.out.println("Проверяем прицеп");
-    }
+    // Абстрактный метод по обслуживанию для реализации в классах-потомках
+    public abstract void check(VehicleType vehicleType);
 
 }
